@@ -18,4 +18,8 @@ export class Tab1Page implements OnInit {
     })
   }
 
+  selecionar(produto: any){
+    console.log(produto.nome);
+  }
+
 }
