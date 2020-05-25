@@ -7,14 +7,14 @@ import {ProdutosService } from '../services/produtos.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
+
+  produtos = [];
   
   constructor(public produtosService: ProdutosService) {}
 
   ngOnInit(){
-    console.log('ON INIT')
-
     this.produtosService.listarProdutos().subscribe(resultado => {
-      console.log(resultado);
+    this.produtos = resultado;
     })
   }
 

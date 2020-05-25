@@ -14,20 +14,20 @@
   </ion-header>
 
 
-  <ion-card class="itemCompra">
+  <div class = "vitrine">
+  <ion-card class="itemCompra" *ngFor ="let produto of produtos">
     <img src="https://static.clubeextra.com.br/img/uploads/1/351/590351.png?type=product"/>
     <ion-card-header class="itemHeader">
-      <ion-card-subtitle class="nomeProduto">Saco de Arroz</ion-card-subtitle>
-      <ion-card-title class="precoProduto">RS 12,00</ion-card-title>
+      <ion-card-subtitle class="nomeProduto">{{produto.nome}}</ion-card-subtitle>
+      <ion-card-title class="precoProduto">RS {{produto.preco}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content class="lojaProduto">
-      Daft
+      {{produto.descricao}}
     </ion-card-content>
   </ion-card>
+</div>
   
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
 
 

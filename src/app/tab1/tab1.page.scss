@@ -4,6 +4,13 @@ ion-content ion-toolbar {
 
 .itemCompra {
   width: 30%;
+  margin: 5px;
+}
+
+.vitrine{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .itemHeader {
