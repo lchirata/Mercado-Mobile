@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="toolbar">
+      <ion-title class="titulo">Produtos</ion-title>
+      <ion-icon (click)="resumoCompra()" class="carrinhoIcone" name="cart-outline"></ion-icon> 
+    </div>
   </ion-toolbar>
 </ion-header>
 
@@ -13,25 +14,27 @@
     </ion-toolbar>
   </ion-header>
 
+  <ion-searchbar (ionChange)="teclaDigita($event)"></ion-searchbar>
 
   <div class="vitrine">
-  <ion-card class="itemCompra" *ngFor ="let produto of produtos" (click)="selecionar(produto)">
-    <img src="{{produto.imagem}}"/>
-    <ion-card-header class="itemHeader">
-      <ion-card-subtitle class="nomeProduto">{{produto.nome}}</ion-card-subtitle>
-      <ion-card-title class="precoProduto">RS {{produto.preco}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content class="lojaProduto">
-      {{produto.fornecedor}}
-</ion-card-content>
-  </ion-card>
-</div>
-  
+    <ion-card class="itemCompra" *ngFor="let produto of produtos">
+      <img src="{{produto.imagem}}" />
+      <ion-card-header class="itemHeader">
+        <ion-card-subtitle class="nomeProduto">{{produto.nome}}</ion-card-subtitle>
+        <ion-card-title class="precoProduto">RS {{produto.preco}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="lojaProduto">
+        {{produto.fornecedor}}
+      </ion-card-content> 
+
+      <ion-button class="botaocarrinho" expand="full" (click)="adicionarNoCarrinho(produto)">
+        <ion-icon name="cart-outline"></ion-icon>
+        comprar
+      </ion-button>
+    </ion-card>
+
+  </div>
+
+
 </ion-content>
-
-
-
-
-
-

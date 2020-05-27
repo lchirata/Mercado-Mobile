@@ -18,8 +18,16 @@ export class Tab1Page implements OnInit {
     })
   }
 
-  selecionar(produto: any){
-    console.log(produto.nome);
+  adicionarNoCarrinho(produto){
+    console.log(produto);
   }
 
+
+  teclaDigita(event: any){
+    console.log(event.detail.value);
+  }
+
+  resumoCompra(){
+    console.log('resumo compra');
+  }
 }
