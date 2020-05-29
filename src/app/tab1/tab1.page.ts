@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProdutosService } from '../services/produtos.service';
+import { CarrinhoComponent} from './carrinho/carrinho.component';
+import { ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -9,8 +11,12 @@ import {ProdutosService } from '../services/produtos.service';
 export class Tab1Page implements OnInit {
 
   produtos = [];
+  carrinho = [];
   
-  constructor(public produtosService: ProdutosService) {}
+  constructor(
+    public produtosService: ProdutosService,
+    public modalController: ModalController
+    ) {}
 
   ngOnInit(){
     this.produtosService.listarProdutos().subscribe(resultado => {
@@ -18,16 +24,19 @@ export class Tab1Page implements OnInit {
     })
   }
 
-  adicionarNoCarrinho(produto){
-    console.log(produto);
+  adicionarNoCarrinho(produto: any){
+    this.carrinho.push(produto);
   }
-
 
   teclaDigita(event: any){
     console.log(event.detail.value);
   }
 
-  resumoCompra(){
-    console.log('resumo compra');
+  async resumoCompra(){
+    const modal = await this.modalController.create({
+      component: CarrinhoComponent,
+      cssClass: 'modal'
+    });
+    return await modal.present();
   }
 }

@@ -3,6 +3,9 @@
     <div class="toolbar">
       <ion-title class="titulo">Produtos</ion-title>
       <ion-icon (click)="resumoCompra()" class="carrinhoIcone" name="cart-outline"></ion-icon> 
+      <ion-badge *ngIf="carrinho.length"color="primary">{{ carrinho.length}}</ion-badge>
+
+
     </div>
   </ion-toolbar>
 </ion-header>
