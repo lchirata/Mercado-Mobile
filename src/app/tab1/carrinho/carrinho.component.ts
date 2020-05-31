@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -8,13 +8,22 @@ import { ModalController } from '@ionic/angular';
 })
 export class CarrinhoComponent implements OnInit {
 
+  @Input() carrinho: Array<any>;
+
   constructor(public modalController: ModalController) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.carrinho);
+  }
 
   fecharResumo(){
     this.modalController.dismiss({
       dismissed: true
     })
+  }
+
+  excluirProduto(produto: any){
+    console.log(produto);
+    this.carrinho = this.carrinho.filter(item => item.id != produto.id);
   }
 }

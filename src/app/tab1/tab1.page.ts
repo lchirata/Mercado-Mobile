@@ -35,7 +35,10 @@ export class Tab1Page implements OnInit {
   async resumoCompra(){
     const modal = await this.modalController.create({
       component: CarrinhoComponent,
-      cssClass: 'modal'
+      cssClass: 'modal',
+      componentProps:{
+        carrinho: this.carrinho,
+      }
     });
     return await modal.present();
   }

@@ -1,8 +1,24 @@
 <ion-header>
-  <ion-toolbar >
-  <div class="titulo" >
-  <ion-title> Carrinho </ion-title>
-  <ion-icon (click)="fecharResumo()" name="close-circle-outline"></ion-icon>
-  </div>
+  <ion-toolbar>
+    <div class="titulo">
+      <ion-title> Carrinho </ion-title>
+      <ion-icon (click)="fecharResumo()" name="close-circle-outline"></ion-icon>
+    </div>
   </ion-toolbar>
- </ion-header>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let produto of carrinho">
+      <ion-thumbnail slot="start">
+        <img src="{{produto.imagem}}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{produto.nome}}</h2>
+        <h3>R${{produto.preco}}</h3>
+      </ion-label>
+      <ion-icon slot="end" name="trash-outline" (click)="excluirProduto(produto)"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
