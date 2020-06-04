@@ -10,7 +10,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let produto of carrinho">
+    <ion-item *ngFor="let produto of carrinho.resumoCompra()">
       <ion-thumbnail slot="start">
         <img src="{{produto.imagem}}">
       </ion-thumbnail>

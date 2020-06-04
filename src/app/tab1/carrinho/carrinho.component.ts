@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Produto } from 'src/app/models/Produto';
+import { Carrinho } from 'src/app/models/Carrinho';
 
 @Component({
   selector: 'app-carrinho',
@@ -8,7 +10,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class CarrinhoComponent implements OnInit {
 
-  @Input() carrinho: Array<any>;
+  @Input() carrinho: Carrinho;
 
   constructor(public modalController: ModalController) { }
 
@@ -22,8 +24,8 @@ export class CarrinhoComponent implements OnInit {
     })
   }
 
-  excluirProduto(produto: any){
+  excluirProduto(produto: Produto){
     console.log(produto);
-    this.carrinho = this.carrinho.filter(item => item.id != produto.id);
+    this.carrinho.excluirDoCarrinho(produto);
   }
 }

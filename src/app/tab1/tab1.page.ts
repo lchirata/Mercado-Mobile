@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ProdutosService } from '../services/produtos.service';
 import { CarrinhoComponent} from './carrinho/carrinho.component';
 import { ModalController} from '@ionic/angular';
+import { Produto } from '../models/Produto';
+import { Carrinho } from '../models/Carrinho';
 
 @Component({
   selector: 'app-tab1',
@@ -10,8 +12,8 @@ import { ModalController} from '@ionic/angular';
 })
 export class Tab1Page implements OnInit {
 
-  produtos = [];
-  carrinho = [];
+  produtos = Array<Produto>();
+  carrinho = new Carrinho();
   
   constructor(
     public produtosService: ProdutosService,
@@ -24,8 +26,8 @@ export class Tab1Page implements OnInit {
     })
   }
 
-  adicionarNoCarrinho(produto: any){
-    this.carrinho.push(produto);
+  adicionarNoCarrinho(produto: Produto){
+    this.carrinho.adicionarNoCarrinho(produto);
   }
 
   teclaDigita(event: any){
