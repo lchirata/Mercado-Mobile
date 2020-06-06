@@ -15,10 +15,23 @@
         <img src="{{produto.imagem}}">
       </ion-thumbnail>
       <ion-label>
-        <h2>{{produto.nome}}</h2>
-        <h3>R${{produto.preco}}</h3>
+        <h2>{{produto.nome}} {{produto.quantidade}} x </h2>
+        <h3>R$ {{produto.preco}}</h3>
       </ion-label>
       <ion-icon slot="end" name="trash-outline" (click)="excluirProduto(produto)"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
+
+
+<ion-footer style="padding: 10px;">
+  <ion-card class="resumo-compra">
+  <div>
+  <ion-button color="success">Comprar</ion-button>
+  </div>
+  <div class="total-preco">
+  <p class="resumo-total"> Total </p>
+  <p class="resumo-preco"> R$ {{carrinho.valorTotal()}} </p>
+  </div>
+  </ion-card>
+ </ion-footer>

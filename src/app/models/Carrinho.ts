@@ -1,4 +1,5 @@
 import { Produto } from './Produto';
+import { ChildActivationStart } from '@angular/router';
 
 export class Carrinho {
 
@@ -9,11 +10,25 @@ export class Carrinho {
     }
 
     adicionarNoCarrinho(produto: Produto) {
-        this.produtos.push(produto);
+        const produtoExiste =  this.produtos.find(item => item.id === produto.id);
+
+        if (produtoExiste){
+            produtoExiste.quantidade += 1;
+            console.log(produtoExiste.quantidade);
+        } else {
+            produto.quantidade = 1;
+            this.produtos.push(produto);  
+        }
     }
 
     excluirDoCarrinho(produto: Produto) {
-        this.produtos = this.produtos.filter(item => item.id !== produto.id);
+        const produtoExiste = this.produtos.find(item => item.id === produto.id)
+
+        if (produtoExiste.quantidade > 1){
+            produtoExiste.quantidade -= 1;
+        }else{
+            this.produtos = this.produtos.filter(item => item.id != produto.id);
+        }   
     }
 
     resumoCompra() {
@@ -23,8 +38,19 @@ export class Carrinho {
     numeroDeProdutos() {
         return this.produtos.length;
     }
-
-
-
+    
+    valorTotal(){
+        // const total = this.produtos.reduce((acc, cur) => {
+        //     return acc + (cur.preco * cur.quantidade)
+        //     }, 0)
+        //     return total.toFixed(2);
+        let total = 0;
+        for(let produto of this.produtos){
+            const preco = produto.preco;
+            const quantidade = produto.quantidade;
+            total += (preco * quantidade);
+        }
+        return total.toFixed(2);
+    }
 }
 
