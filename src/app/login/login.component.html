@@ -1,17 +1,17 @@
 
-<form (ngSubmit)="login()">
+<form>
 
   <ion-item>
     <ion-label position="floating">email</ion-label>
-    <ion-input requered="true" type="email"></ion-input>
+    <ion-input requered="true" type="email" (ionChange)="mudaEmail($event)"></ion-input>
   </ion-item>
   
   <ion-item>
     <ion-label position="floating">senha</ion-label>
-    <ion-input requered="true" type="password"></ion-input>
+    <ion-input requered="true" type="password" (ionChange)="mudaSenha($event)"></ion-input>
   </ion-item>
 
   <div class="btn-login"> 
-    <ion-button expand="block" color="success" type="submit" block>Login</ion-button>  
+    <ion-button (click)="login()" expand="block" color="success" type="button" block>Login</ion-button>  
   </div>
 </form>

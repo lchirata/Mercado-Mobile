@@ -4,10 +4,10 @@ import { LoginComponent} from './login/login.component';
 
 
 const routes: Routes = [
-  // {path: '', component: LoginComponent},
+  { path: '', component: LoginComponent },
   {
-    path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  path: 'loja',
+  loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
 ];
 @NgModule({
