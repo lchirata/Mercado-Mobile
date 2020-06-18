@@ -56,4 +56,8 @@ export class Tab2Page {
   ngOnInit() {
 
   }
+
+  irParaDetalhesPedido(pedido: any){
+    console.log(pedido);
+  }
 }
