@@ -1,0 +1,31 @@
+<ion-header>
+    <h1>Pedidos</h1>
+</ion-header>
+
+<ion-content>
+
+    <div class="container-pedido" *ngFor="let pedido of pedidos">
+        <p class="data">{{ pedido.dataTexto }}</p>
+        <ion-card>
+            <ion-card-header>
+                <ion-item>
+                    <ion-avatar slot="start">
+                        <img src="{{ pedido.ongLogo }}">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>{{ pedido.ongNome }}</h2>
+                        <p> {{ pedido.status }} - {{ pedido.id }}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-card-header>
+
+            <ion-card-content>
+                <div class="resumo-compra" *ngFor="let produto of pedido.produtos">
+                    <p class="quantidade">{{ produto.quantidade }}</p>
+                    <p>{{ produto.nome }}</p>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

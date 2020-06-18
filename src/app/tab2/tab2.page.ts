@@ -9,9 +9,51 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  pedidos = [
+    {
+      dataTexto: 'Dom - 03 de fevereiro de 2019',
+      ongLogo: './avatar-finn.png',
+      ongNome: 'Habibs',
+      status: 'Pedido Entregue',
+      id: '4812',
+      produtos: [
+        {
+          nome: 'Esfirra de Carne',
+          quantidade: 8,
+        }, {
+          nome: 'Kibe frito',
+          quantidade: 2,
+        }, {
+          nome: 'Esfirra de Queijo',
+          quantidade: 6,
+        }
+      ]
+    }, {
+      dataTexto: 'Dom - 03 de fevereiro de 2019',
+      ongLogo: './avatar-finn.png',
+      ongNome: 'Habibs',
+      status: 'Pedido Entregue',
+      id: '4812',
+      produtos: [
+        {
+          nome: 'Esfirra de Carne',
+          quantidade: 8,
+        }, {
+          nome: 'Kibe frito',
+          quantidade: 2,
+        }, {
+          nome: 'Esfirra de Queijo',
+          quantidade: 6,
+        }
+      ]
+    }
+  ]
+
+
+
+  constructor() { }
 
   ngOnInit() {
-   
+
   }
 }

@@ -1,3 +1,24 @@
 ion-content ion-toolbar {
   --background: translucent;
-}
+ }
+  
+ .quantidade {
+  border-radius: 30%;
+  padding: 0px 3px;
+  margin-right: 3px; 
+  border: 0.5px solid #b1b1b1
+ }
+  
+ .resumo-compra {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: start;
+ }
+
+ .data{
+  margin: 0px 12px;
+  font-weight:bold
+ }
+ .container-pedido{
+  margin-top: 10px
+ }
