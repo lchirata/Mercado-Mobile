@@ -19,7 +19,9 @@
 
   <div class="vitrine">
     <ion-card class="itemCompra" *ngFor="let produto of produtos">
-      <img src="{{produto.imagem}}" />
+      <div class="container-imagem-produto">
+        <img class="imagem-produto"src="{{produto.imagem}}" />
+      </div>
       <ion-card-header class="itemHeader">
         <ion-card-subtitle class="nomeProduto">{{produto.nome}}</ion-card-subtitle>
         <ion-card-title class="precoProduto">RS {{produto.preco}}</ion-card-title>

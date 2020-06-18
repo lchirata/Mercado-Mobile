@@ -52,3 +52,13 @@ ion-content ion-toolbar {
   padding: 0px;
 }
 
+.container-imagem-produto {
+  height: 118px;
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+ }
+  
+ .imagem-produto {
+  height: 118px;
+ }
