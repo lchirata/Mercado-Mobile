@@ -5,7 +5,7 @@
 <ion-content>
 
     <div class="container-pedido" *ngFor="let pedido of pedidos">
-        <p class="data">{{ pedido.dataTexto }}</p>
+        <p class="data">{{ pedido.data}}</p>
         <ion-card (click)="irParaDetalhesPedido(pedido)">
             <ion-card-header>
                 <ion-item>

@@ -12,13 +12,14 @@ ion-content ion-toolbar {
  .resumo-compra {
   display: flex; 
   flex-direction: row; 
-  justify-content: start;
+  justify-content: flex-start;
  }
 
  .data{
   margin: 0px 12px;
   font-weight:bold
  }
+
  .container-pedido{
   margin-top: 10px
  }
