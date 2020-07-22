@@ -55,7 +55,7 @@ export class Tab2Page {
   ) { }
 
   ngOnInit() {
-    this.listarPedidos();
+    // this.listarPedidos();
   }
 
   listarPedidos(){
