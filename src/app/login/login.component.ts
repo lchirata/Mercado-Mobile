@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientesService} from '../services/clientes.service';
 import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { Cliente } from '../models/Cliente';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit {
     console.log('Login');
 
     this.clientesService.login(this.email, this.senha).subscribe(response => {
+      this.guardaClienteLogado(response);
       this.irParaLoja();
     }, erro => {
       const mensagem = erro.error.mensagem;
@@ -51,6 +53,22 @@ export class LoginComponent implements OnInit {
 
   irParaLoja() {
     this.router.navigate(['/loja/tabs/tab1']);
+  }
+
+  guardaClienteLogado(response: Cliente) {
+
+    const cliente = new Cliente();
+
+    cliente.id = response.id;
+    cliente.nome = response.nome;
+    cliente.email = response.email;
+    cliente.senha = response.senha;
+    cliente.endereco = response.endereco;
+    cliente.telefone = response.telefone;
+
+    cliente.setId(response.id);
+
+
   }
 
 

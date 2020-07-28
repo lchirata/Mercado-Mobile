@@ -52,5 +52,9 @@ export class Carrinho {
         }
         return total.toFixed(2);
     }
+
+    esvaziarCarrinho() {
+        this.produtos = new Array<Produto>();
+    }
 }
 

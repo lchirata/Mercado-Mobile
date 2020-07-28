@@ -17,7 +17,7 @@ export class ClientesService {
  return this.http.post('http://localhost:3000/clientes/login', body);
  }
 
- listarProdutoDoCliente(idCliente: number): Observable<any>{
+ listarProdutoDoCliente(idCliente: number | string): Observable<any>{
      return this.http.get(`http://localhost:3000/clientes/${idCliente}/pedidos`);
  }
  
